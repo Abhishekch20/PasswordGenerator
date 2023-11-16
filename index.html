@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <title>Password Generator</title>
+</head>
+<body class="bg-green-500 min-h-screen flex items-center justify-center">
+    <div class="max-w-md p-8 text-white bg-black rounded-lg shadow-lg">
+        <h1 class="text-2xl  font-semibold mb-4">Password Generator</h1>
+        
+        <div class="mb-4">
+            <label for="length" class="block text-sm font-medium text-white">Password Length:</label>
+            <input type="number" id="length" class="mt-1 p-2 w-full text-black rounded-md border border-gray-500" value="8" min="4" max="20">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-white mb-2">Password Complexity:</label>
+            <div class="flex items-center space-x-2">
+                <input type="checkbox" id="uppercase" class="form-checkbox" checked>
+                <label for="uppercase" class="text-sm font-medium text-white">Uppercase</label>
+            </div>
+            <div class="flex items-center space-x-2">
+                <input type="checkbox" id="lowercase" class="form-checkbox" checked>
+                <label for="lowercase" class="text-sm font-medium text-white">Lowercase</label>
+            </div>
+            <div class="flex items-center space-x-2">
+                <input type="checkbox" id="numbers" class="form-checkbox" checked>
+                <label for="numbers" class="text-sm font-medium text-white">Numbers</label>
+            </div>
+            <div class="flex items-center space-x-2">
+                <input type="checkbox" id="symbols" class="form-checkbox" checked>
+                <label for="symbols" class="text-sm font-medium text-white">Symbols</label>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label for="generatedPassword" class="block text-sm font-medium text-white">Generated Password:</label>
+            <input type="text" id="password" class="mt-1 p-2 w-full text-black rounded-md border border-gray-500" readonly>
+        </div>
+
+        <button onclick="generatePassword()" class="bg-green-500 text-white px-4 py-2 rounded-md">Generate Password</button>
+        <button onclick="copyToClipboard()" class="bg-green-500 text-white px-4 py-2 rounded-md ml-">Copy to Clipboard</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
